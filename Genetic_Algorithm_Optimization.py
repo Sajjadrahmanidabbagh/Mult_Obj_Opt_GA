@@ -3,13 +3,13 @@ import numpy as np
 from deap import base, creator, tools, algorithms
 import matplotlib.pyplot as plt
 
-# Markdown: Step 1 - Load Data from CSV File
+# Step 1 - Load Data from CSV File
 # Load coolant data from a CSV file and store each row as a separate coolant with specified features.
 data = pd.read_csv('coolants.csv', header=None)
 data.columns = ['Flow Rate', 'Initial Temperature', 'Initial Pressure', 'Transfer Rate', 'Special Heat']
 coolants = {f"Coolent_R{i+1}": data.iloc[i] for i in range(10)}
 
-# Markdown: Step 2 - Define Evaluation Function
+# Step 2 - Define Evaluation Function
 # Define a function to calculate performance and exergy for the optimization process.
 def evaluate(individual):
     flow_rate, init_temp, init_pressure, transfer_rate, special_heat = individual
