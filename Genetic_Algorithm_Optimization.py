@@ -18,7 +18,7 @@ def evaluate(individual):
     exergy = special_heat / (init_pressure + 1)
     return performance, exergy
 
-# Markdown: Step 3 - Setup Genetic Algorithm
+# Setup Genetic Algorithm
 # Configure the DEAP framework for multi-objective optimization.
 creator.create("FitnessMulti", base.Fitness, weights=(1.0, 1.0))
 creator.create("Individual", list, fitness=creator.FitnessMulti)
