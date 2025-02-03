@@ -35,7 +35,7 @@ toolbox.register("mutate", tools.mutGaussian, mu=0, sigma=1, indpb=0.2)
 toolbox.register("select", tools.selNSGA2)
 toolbox.register("evaluate", evaluate)
 
-# Markdown: Step 4 - Run Optimization
+# Run Optimization
 # Run the genetic algorithm to optimize coolant parameters.
 population = toolbox.population(n=100)
 num_generations = 50
@@ -61,7 +61,7 @@ for gen in range(num_generations):
     record = stats.compile(population)
     logbook.record(gen=gen, evals=len(offspring), **record)
 
-# Markdown: Step 5 - Plot Results
+# Plot Results
 # Extract and plot results including the Pareto frontier.
 front = tools.sortNondominated(population, len(population), first_front_only=True)[0]
 
@@ -77,7 +77,7 @@ plt.legend()
 plt.grid()
 plt.show()
 
-# Markdown: Save Logbook and Plot Metrics
+# Save Logbook and Plot Metrics
 # Save the logbook for performance analysis and plot generation trends.
 averages = [gen["avg"] for gen in logbook]
 avg_performance, avg_exergy = zip(*averages)
@@ -92,7 +92,7 @@ plt.legend()
 plt.grid()
 plt.show()
 
-# Markdown: Save Outputs
+# MSave Outputs
 # Save the optimized parameters and Pareto front data.
 optimized_parameters = pd.DataFrame([list(ind) for ind in front], columns=data.columns)
 optimized_parameters.to_csv('optimized_parameters.csv', index=False)
