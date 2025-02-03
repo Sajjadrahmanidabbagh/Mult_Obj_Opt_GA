@@ -3,7 +3,7 @@ import numpy as np
 from deap import base, creator, tools, algorithms
 import matplotlib.pyplot as plt
 
-# Step 1 - Load Data from CSV File
+# Load Data from CSV File
 # Load coolant data from a CSV file and store each row as a separate coolant with specified features.
 data = pd.read_csv('coolants.csv', header=None)
 data.columns = ['Flow Rate', 'Initial Temperature', 'Initial Pressure', 'Transfer Rate', 'Special Heat']
