@@ -9,7 +9,7 @@ data = pd.read_csv('coolants.csv', header=None)
 data.columns = ['Flow Rate', 'Initial Temperature', 'Initial Pressure', 'Transfer Rate', 'Special Heat']
 coolants = {f"Coolent_R{i+1}": data.iloc[i] for i in range(10)}
 
-# Step 2 - Define Evaluation Function
+# Define Evaluation Function
 # Define a function to calculate performance and exergy for the optimization process.
 def evaluate(individual):
     flow_rate, init_temp, init_pressure, transfer_rate, special_heat = individual
