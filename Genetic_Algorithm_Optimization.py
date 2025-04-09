@@ -1,4 +1,4 @@
-## Sajjad - 2022
+## Sajjad
 
 import pandas as pd
 import numpy as np
