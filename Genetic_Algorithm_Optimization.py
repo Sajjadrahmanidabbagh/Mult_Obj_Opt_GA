@@ -2,7 +2,6 @@
 Date: Jan 2022
 Author: Sajjad
 """
-
 import pandas as pd
 import numpy as np
 from deap import base, creator, tools, algorithms
