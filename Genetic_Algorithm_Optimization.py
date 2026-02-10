@@ -7,8 +7,8 @@ import numpy as np
 from deap import base, creator, tools, algorithms
 import matplotlib.pyplot as plt
 
-# Load Data from CSV File
-# Load coolant data from a CSV file and store each row as separate coolant with specified features.
+# Load Data from CSV File.
+# Load coolant data from a CSV file and store each row as a separate coolant with specified features.
 data = pd.read_csv('coolants.csv', header=None)
 data.columns = ['Flow Rate', 'Initial Temperature', 'Initial Pressure', 'Transfer Rate', 'Special Heat']
 coolants = {f"Coolent_R{i+1}": data.iloc[i] for i in range(10)}
